@@ -58,9 +58,11 @@ print('-------------------------------------------------------------------------
 # "Leo Tolstoy*1828-08- 28*1910-11-20" функция должна вернуть: "Leo Tolstoy", 82
 
 str_writer = 'Leo Tolstoy*1828-08-28*1910-11-20'
-idx_wr1 = str_writer.find('*')
-idx_wr2 = str_writer.find('*', idx_wr1 +1)
-program_year_old = int(str_writer[idx_wr2+1:idx_wr2+5]) - int(str_writer[idx_wr1+1:idx_wr1+5])
+idx_wr1 = str_writer.find('*')                 # Index ferst "*"
+idx_wr2 = str_writer.find('*', idx_wr1 +1)     # Index second "*"
+idx_wr3 = str_writer.find('-')                 # Index ferst "-"
+idx_wr4 = str_writer.find('-', idx_wr2)        # Index ferst "-"
+program_year_old = int(str_writer[idx_wr2+1:idx_wr4]) - int(str_writer[idx_wr1+1:idx_wr3])
 
 print('Result task 4 :', '"' + str_writer[:idx_wr1] + '",', program_year_old )
 print('----------------------------------------------------------------------------------------------------------------')
