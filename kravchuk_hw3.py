@@ -67,9 +67,9 @@ def square_perimeter(x,y):
     perimeter = x+y+(math.sqrt(x**2 + y**2))
     return square, perimeter
 
-result_13 = square_perimeter(a,b)
+square, perimeter = square_perimeter(a,b)
 
-pretty_print(result_13)
+pretty_print('Square = %.2f Perimeter = %.2f' % (square, perimeter))
 
 
 
