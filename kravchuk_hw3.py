@@ -43,10 +43,14 @@ print_delim()
 pretty_task(12)
 
 def amount(number):
-    result = int(number[0])+int(number[1])+int(number[2])
-    return result
+    hundreds = number // 100
+    dozens = (number - hundreds * 100)//10
+    units = number - hundreds*100 - dozens*10
+    sum_td = hundreds+dozens+units
+    return sum_td
 
-number_3 = input('Enter three-digit number... ')
+
+number_3 = int(input('Enter three-digit number... '))
 
 result = amount(number_3)
 
