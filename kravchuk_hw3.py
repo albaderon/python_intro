@@ -45,7 +45,7 @@ pretty_task(12)
 def amount(number):
     hundreds = number // 100
     dozens = (number - hundreds * 100)//10
-    units = number - hundreds*100 - dozens*10
+    units = number % 10
     sum_td = hundreds+dozens+units
     return sum_td
 
