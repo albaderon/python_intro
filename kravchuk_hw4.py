@@ -40,23 +40,22 @@ pretty_print(is_number_even(num_val))
 
 pretty_task(15)
 
-circle_x1 = 5
-circle_y1 = 5
-circle_r1 = 2
+circle_x1 = 0
+circle_y1 = 0
+circle_r1 = 3
 
-circle_x2 = 10
-circle_y2 = 10
-circle_r2 = 7
+circle_x2 = 5
+circle_y2 = 0
+circle_r2 = 1
 
 def is_circles_cross(x1,y1,r1,x2,y2,r2):
     a = math.fabs(x1 - x2)
     b = math.fabs(y1 - y2)
     c = math.sqrt(a**2 + b**2)
-    if c < (r1+r2) or x1==x2 and y1==y2 and r1==r2 or c >= (math.fabs(r1-r2)):
-        return True
-
-    else:
+    if c > (r1+r2) or x1!=x2 and y1!=y2 and r1!=r2 or c<(math.fabs(r1-r2)):
         return False
+    else:
+        return True
 
 
 pretty_print(is_circles_cross(circle_x1,circle_y2,circle_r1,circle_x2,circle_y2,circle_r2))
