@@ -54,6 +54,7 @@ def is_circles_cross(x1,y1,r1,x2,y2,r2):
     c = math.sqrt(a**2 + b**2)
     if c < (r1+r2) or x1==x2 and y1==y2 and r1==r2:
         return True
+
     else:
         return False
 
@@ -93,17 +94,13 @@ def quadratic_equation(a,b,c):
             x1=(-b+math.sqrt(d))/2*a
             x2=(-b-math.sqrt(d))/2*a
             return x1,x2
-            print('x1=%.1f x2=%.1f' % (x1,x2))
+
         elif d == 0:
             x1=-b/2*a
-            x2=None
-            return x1,x2
-            print('x1=%.1f x2=%.1f' % (x1,x2))
+            return x1,None
+
         else:
-            x1=None
-            x2=None
-            return x1,x2
-            print('x1=%.1f x2=%.1f' % (x1,x2))
+            return None, None
 
 a = int(input('Enter a... '))
 b = int(input('Enter b... '))
