@@ -108,7 +108,7 @@ c = int(input('Enter c... '))
 
 x1,x2 = quadratic_equation(a,b,c)
 
-print('x1 =',x1,'x2 =',x2) # print x1 x2
+pretty_print("Equation with a=%d, b=%d, c=%d has roots: %s, %s" % (a, b, c, x1, x2))
 
 
 
