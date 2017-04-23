@@ -52,7 +52,7 @@ def is_circles_cross(x1,y1,r1,x2,y2,r2):
     a = math.fabs(x1 - x2)
     b = math.fabs(y1 - y2)
     c = math.sqrt(a**2 + b**2)
-    if c < (r1+r2) or x1==x2 and y1==y2 and r1==r2:
+    if c < (r1+r2) or x1==x2 and y1==y2 and r1==r2 or c >= (math.fabs(r1-r2)):
         return True
 
     else:
@@ -100,14 +100,15 @@ def quadratic_equation(a,b,c):
             return x1,None
 
         else:
-            return None, None
+            return None,None
 
 a = int(input('Enter a... '))
 b = int(input('Enter b... '))
 c = int(input('Enter c... '))
 
-pretty_print(quadratic_equation(a,b,c))
+x1,x2 = quadratic_equation(a,b,c)
 
+print('x1 =',x1,'x2 =',x2)
 
 
 
