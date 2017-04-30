@@ -45,11 +45,15 @@ pretty_task(19)
 x = 0
 summa = 0
 exp = 0
+
 while 0 <= exp <= 1000000:
     exp = 3**x
+    if exp > 1000000:
+        continue
     summa = summa + exp
-    x = x + 1
     print('3 ^',x,' = ', exp)
+    x = x + 1
+
 pretty_print(summa)
 
 # ============================================================================================
