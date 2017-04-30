@@ -61,7 +61,7 @@ pretty_task(20)
 
 for c in range(1000):
     c = str(c)
-    if '7' in c:
+    if '7' in c and '1' in c:
         print(c, end=', ')
 
 
