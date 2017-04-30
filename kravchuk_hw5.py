@@ -25,14 +25,19 @@ def pretty_task(value):
 pretty_task(18)
 
 def sum_digit_unicod(a,b):
-    sum_unicod = ord(a)
-    for c in 'abcmndxyz':
-        print('c =',c,'unicod',ord(c))
-        sum_unicod = sum_unicod + ord(c)
+    x = ord(a)
+    y = ord(b)+1
+    sum_unicod = x
+    for i in range(x,y):
+        sum_unicod = sum_unicod + i
+        print('symbol =', chr(i),'unicod =',i)
     return sum_unicod
-symbol_1 = 'a'
-symbol_2 = 'z'
-result = sum_digit_unicod(symbol_1,symbol_2)
+
+a = input('Enter first symbol...')
+b = input('Enter second symbol...')
+
+
+result = sum_digit_unicod(a,b)
 pretty_print(result)
 
 # ============================================================================================
