@@ -48,7 +48,7 @@ exp = 0
 
 while 0 <= exp <= 1000000:
     exp = 3**x
-    if exp > 1000000:
+    if exp >= 1000000:
         continue
     summa = summa + exp
     print('3 ^',x,' = ', exp)
