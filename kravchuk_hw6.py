@@ -30,15 +30,16 @@ def is_prime_number(number):
             # print(i,x,sum_division)
     if sum_division < 3:
         return True
-
+    else:
+        return False
 
 def print_prime_number(a,b):
     lower_limit = a
     upper_limit = b
     for i in range(lower_limit,upper_limit+1):
         if is_prime_number(i):
-            print('Prime number =',i)
 
+            print('Prime number =',i)
 
 print_prime_number(1,100)
 
