@@ -24,7 +24,7 @@ pretty_task(21)
 
 def is_prime_number(number):
     sum_division = 0
-    for x in range(1,11):
+    for x in range(1,number+1):
         if number%x==0:
             sum_division = sum_division + 1
             # print(i,x,sum_division)
