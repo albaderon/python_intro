@@ -22,19 +22,27 @@ def pretty_task(value):
 
 pretty_task(21)
 
-def is_prime_number(a,b):
+def is_prime_number(number):
+    sum_division = 0
+    for x in range(1,11):
+        if number%x==0:
+            sum_division = sum_division + 1
+            # print(i,x,sum_division)
+    if sum_division < 3:
+        return True
+
+
+def print_prime_number(a,b):
     lower_limit = a
     upper_limit = b
     for i in range(lower_limit,upper_limit+1):
-        sum_division = 0
-        for x in range(lower_limit,i+1):
-            if i%x==0:
-                sum_division = sum_division + 1
-                # print(i,x,sum_division)
-        if sum_division < 3:
-            print('Prime number:', i)
+        if is_prime_number(i):
+            print('Prime number =',i)
 
-is_prime_number(1,100)
+
+print_prime_number(1,100)
+
+
 
 # ============================================================================================
 # Task 22. Создать функцию, выводящую на экран случайно сгенерированное
@@ -44,7 +52,7 @@ is_prime_number(1,100)
 pretty_task(22)
 def twalve_digit_num(a):
     lower_limit = 10**(a-1)
-    upper_limit = 10**a
+    upper_limit = 10**a-1
     number = random.randint(lower_limit,upper_limit)
     max_digit = 0
     for i in str(number):
