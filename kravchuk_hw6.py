@@ -22,15 +22,12 @@ def pretty_task(value):
 
 pretty_task(21)
 
-def is_not_prime_number(number):
+def is_prime_number(number):
     upper_limit = int(math.sqrt(number))+2
     for x in range(2,upper_limit):
         if number%x==0:
-            return True
-        if number%x!=0:
-            continue
-        else:
             return False
+    return True
 
 
 
@@ -38,7 +35,7 @@ def print_prime_number(a,b):
     lower_limit = a
     upper_limit = b
     for i in range(lower_limit,upper_limit+1):
-        if is_not_prime_number(i) is not True:
+        if is_prime_number(i):
             print('Prime number =',i)
 
 print_prime_number(1,100)
