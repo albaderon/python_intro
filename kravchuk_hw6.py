@@ -23,24 +23,19 @@ def pretty_task(value):
 pretty_task(21)
 
 def is_prime_number(number):
-    sum_division = 0
     upper_limit = int(math.sqrt(number))+1
     for x in range(2,upper_limit):
         if number%x==0:
-            sum_division = sum_division + 1
-            # print(i,x,sum_division)
-    if sum_division > 1:
-        return False
+            return False
 
-    else:
-        return True
+        else:
+            return True
 
 def print_prime_number(a,b):
     lower_limit = a
     upper_limit = b
     for i in range(lower_limit,upper_limit+1):
         if is_prime_number(i):
-
             print('Prime number =',i)
 
 print_prime_number(1,100)
