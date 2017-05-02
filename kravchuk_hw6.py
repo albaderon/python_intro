@@ -38,7 +38,7 @@ def print_prime_number(a,b):
     lower_limit = a
     upper_limit = b
     for i in range(lower_limit,upper_limit+1):
-        if is_prime_number(i) is not True:
+        if is_not_prime_number(i) is not True:
             print('Prime number =',i)
 
 print_prime_number(1,100)
