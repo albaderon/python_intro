@@ -23,7 +23,7 @@ def pretty_task(value):
 pretty_task(21)
 
 def is_prime_number(number):
-    upper_limit = int(math.sqrt(number))+1
+    upper_limit = int(math.sqrt(number))+2
     for x in range(2,upper_limit):
         if number%x==0:
             return False
