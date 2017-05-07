@@ -71,11 +71,11 @@ pretty_task(27)
 
 lst = []
 
-for elem in range(1,100,2):
+for i, elem in enumerate(range(1,100,2)):
     lst.append(elem)
-print(lst)
+    lst[i] = random.randint(0,50)
 
-random.shuffle(lst)
+# random.shuffle(lst)
 
 pretty_print(lst)
 
@@ -170,9 +170,7 @@ def encryption():
     for i in range(len(enter_string)):
         encryption_lst.append(enter_string[i])  #string2list
         replace_index = encryption_table.index(encryption_lst[i])
-        if replace_index >= (len(encryption_table) - 5):
-            replace_index = - (len(encryption_table) - replace_index)
-        replace_symbol = encryption_table[replace_index+5]
+        replace_symbol = encryption_table[(replace_index + 5) % len(encryption_table)]
         encryption_lst[i] = replace_symbol
         # encryption_lst.insert(i,encryption_table[4+i])
     encryption_str = ''.join(encryption_lst)    #list2string
