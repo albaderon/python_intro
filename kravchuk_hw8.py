@@ -27,19 +27,19 @@ pretty_task(31)
 
 def password():
     symbol = [chr(x) for x in range(97,123)]
-    print(symbol)
+
 
     password = []
-    sym = symbol[random.randint(0,len(symbol))]
+
     password.append(str(random.randint(0,9)))
-    password.append(sym)
-    password.append((sym.upper()))
+    password.append(symbol[random.randint(0,len(symbol)-1)])
+    password.append((symbol[random.randint(0,len(symbol)-1)].upper()))
     password.append('_')
     for i in range(0,4):
         r = random.randint(0,1)
-        print(r)
+
         if r == 0:
-            password.append(sym)
+            password.append(symbol[random.randint(0,len(symbol)-1)])
         else:
             password.append(str(random.randint(0,10)))
     random.shuffle(password)
