@@ -71,9 +71,15 @@ pretty_task(27)
 
 lst = []
 
-for i, elem in enumerate(range(1,100,2)):
+for elem in range(1,100,2):
     lst.append(elem)
-    lst[i] = random.randint(0,50)
+for i, elem in enumerate(range(1,50)):
+    r = random.randint(i+1,len(lst)-1)
+    c = lst[i]
+    lst[i] = lst[r]
+    lst[r] = c
+
+    print(i,elem)
 
 # random.shuffle(lst)
 
