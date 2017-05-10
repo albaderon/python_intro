@@ -36,7 +36,7 @@ def password():
     password.append(random.choice(symbol))                              #required condition
     password.append(random.choice(symbol_up))                           #required condition
     password.append('_')                                                #required condition
-    for i, elem in enumerate(range(0,4)):
+    for i in range(4):
         r = random.randint(0,2)
         if r == 0:
             password.append(random.choice(symbol))
