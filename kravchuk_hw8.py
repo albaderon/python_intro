@@ -1,5 +1,6 @@
 import math
 import random
+import string
 
 def print_delim(num_repits=80):
     print('='*num_repits)
@@ -26,22 +27,23 @@ def pretty_task(value):
 pretty_task(31)
 
 def password():
-    symbol = [chr(x) for x in range(97,123)]
-    print(symbol)
-
+    symbol = string.ascii_lowercase
+    symbol_up = string.ascii_uppercase
+    digits = string.digits
     password = []
-    sym = symbol[random.randint(0,len(symbol))]
-    password.append(str(random.randint(0,9)))
-    password.append(sym)
-    password.append((sym.upper()))
-    password.append('_')
-    for i in range(0,4):
-        r = random.randint(0,1)
-        print(r)
+
+    password.append(str(random.choice(digits)))                           #required condition
+    password.append(random.choice(symbol))                              #required condition
+    password.append(random.choice(symbol_up))                           #required condition
+    password.append('_')                                                #required condition
+    for i in range(4):
+        r = random.randint(0,2)
         if r == 0:
-            password.append(sym)
+            password.append(random.choice(symbol))
+        elif r == 1:
+            password.append(random.choice(symbol_up))
         else:
-            password.append(str(random.randint(0,10)))
+            password.append(str(random.choice(digits)))
     random.shuffle(password)
     password_string = ''.join(password)
     return password_string
