@@ -50,18 +50,18 @@ pretty_print('\n(a + b * c)^2 = %s \n a - 4 * b / c = %s \n(a * b + 4) / (c - 1)
 
 pretty_task(4)
 
-def mult_odd_numbers():
+def mult_odd_numbers(n):
     mult = 1
     while mult:
         five_digit_number = input('Type integer five digit number')
         if not five_digit_number.isdigit():
             print('number is not digit')
             continue
-        elif len(five_digit_number) != 5:
+        elif len(five_digit_number) != n:
             print('It is not five digit number')
             continue
         else:
-            for i in range(5):
+            for i in range(n):
                 elem = int(five_digit_number[i])
                 if elem%2 == 0:
                     continue
@@ -70,4 +70,4 @@ def mult_odd_numbers():
         return mult
 
 
-pretty_print(mult_odd_numbers())
+pretty_print(mult_odd_numbers(5))
