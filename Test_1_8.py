@@ -14,25 +14,6 @@ def pretty_task(value):
     print_delim()
     print("Task number", value)
 
-
-# =====================================================================================================
-# Task 8.import math
-import random
-
-def print_delim(num_repits=80):
-    print('='*num_repits)
-
-
-def pretty_print(value):
-    print('Result =', value)
-    print_delim()
-
-
-def pretty_task(value):
-    print_delim()
-    print("Task number", value)
-
-
 # =====================================================================================================
 # Task 8.В одномерном массиве поменять местами минимальный и максимальный элементы.
 # Остальные оставить на своих местах.
