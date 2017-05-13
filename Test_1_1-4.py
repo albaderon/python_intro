@@ -64,9 +64,7 @@ def mult_odd_numbers():
         else:
             for i in range(n):
                 elem = int(five_digit_number[i])
-                if elem%2 == 0:
-                    continue
-                else:
+                if elem%2 != 0:
                     mult *= elem
         return mult
 
