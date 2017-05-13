@@ -22,19 +22,20 @@ def pretty_task(value):
 
 pretty_task(5)
 
-def is_short_number(x,y):
-    compare_number = 10
+def is_short_number(x,y,z):
 
-    if abs(10-x) < abs(10-y):
-        result = x
-    elif  abs(10-x) == abs(10-y):
-        result = x,y
-    else:
+    if abs(x-y) < abs(x-z):
         result = y
+    elif  abs(x-y) == abs(x-z):
+        result = y,z
+    else:
+        result = z
     return result
 
-x = int(input('Type first number'))
-y = int(input('Type second number'))
+x = int(input('Type compare number'))
+y = int(input('Type first number'))
+z = int(input('Type second number'))
 
-pretty_print(is_short_number(x,y))
+
+pretty_print(is_short_number(x,y,z))
 
