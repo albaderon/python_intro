@@ -27,10 +27,13 @@ max_elem_list = max(lst)
 min_elem_list = min(lst)
 idx_max_elem = lst.index(max_elem_list)
 idx_min_elem = lst.index(min_elem_list)
-lst.remove(max_elem_list)
-lst.remove(min_elem_list)
-lst.insert(idx_min_elem,max_elem_list)
-lst.insert(idx_max_elem,min_elem_list)
+lst[idx_max_elem] = min_elem_list
+lst[idx_min_elem] = max_elem_list
+
+# lst.remove(max_elem_list)
+# lst.remove(min_elem_list)
+# lst.insert(idx_min_elem,max_elem_list)
+# lst.insert(idx_max_elem,min_elem_list)
 print('Max:', max_elem_list)
 print('Min:', min_elem_list)
 print(lst)
