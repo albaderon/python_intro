@@ -28,14 +28,9 @@ def is_prime_number(number):
             return False
     return True
 
-prime_numbers = [x for x in range(0,100) if is_prime_number(x)]
+prime_numbers = [x for x in range(100) if is_prime_number(x)]
 
-random_prime_numbers = []
+random_prime_numbers = prime_numbers[:10]
+random.shuffle(random_prime_numbers)
 
-while len(random_prime_numbers) != 10:
-    r = random.choice(prime_numbers)
-    if r in random_prime_numbers:
-        continue
-    else:
-        random_prime_numbers.append(r)
 pretty_print(random_prime_numbers)
