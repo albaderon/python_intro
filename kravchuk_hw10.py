@@ -119,11 +119,11 @@ def update_students_results(group):
     '''
     pass
 
-def get_fullname(dict):
-    return dict.get("fullname")
-
-def get_rank(dict):
-    return dict.get("rank")
+# def get_fullname(dict):
+#     return dict.get("fullname")
+#
+# def get_rank(dict):
+#     return dict.get("rank")
 
 
 def print_card(dict):
@@ -142,12 +142,9 @@ def print_card(dict):
 
 
 def print_students_info(group, sort_by_key="fullname"):
-    if sort_by_key == "fullname":
-        for dict in sorted(group, key=get_fullname):
-            print_card(dict)
-    elif sort_by_key == "rank":
-        for dict in sorted(group, key=get_rank):
-            print_card(dict)
+    for dict in sorted(group, key=lambda x : x[sort_by_key]):
+        print_card(dict)
+
 
     '''
     Prints students info sorted according to the passed key in dictionary). By default, sort by students names.
