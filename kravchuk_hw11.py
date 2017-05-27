@@ -17,12 +17,12 @@ class Godzilla:
         self.eaten_human_volume = eaten_human_volume
         self.last_volume = Godzilla.volume_of_stomach
 
-    def eat_humans(self):
-        if self.last_volume - self.eaten_human_volume == 0.1*Godzilla.volume_of_stomach:
+    def eat_humans(self,eat_human):
+        if self.last_volume - eat_human == 0.1*Godzilla.volume_of_stomach:
             print("Godzilla is full and can no longer eat people")
 
         else:
-            self.last_volume -= self.eaten_human_volume
+            self.last_volume -= eat_human
 
 
 
@@ -35,10 +35,10 @@ while dinner.last_volume > 0.1*Godzilla.volume_of_stomach:
         continue
     elif dinner.last_volume - dinner.eaten_human_volume == 0.1*Godzilla.volume_of_stomach:
         print("Last human:", dinner.eaten_human_volume, "nym nym nym nym nym")
-        dinner.eat_humans()
+        dinner.eat_humans(dinner.eaten_human_volume)
         break
     else:
-        dinner.eat_humans()
+        dinner.eat_humans(dinner.eaten_human_volume)
         print("Human:",dinner.eaten_human_volume,"nym nym nym","Last volume:", dinner.last_volume)
 
 
