@@ -92,8 +92,7 @@ def sum_hw_results(id):
     for dict in hw_results:
         if dict["id"] == id:
             for j in dict["task_completion"]:
-                if j == 1:
-                    sum_hw_results += 1
+                sum_hw_results += j
             return sum_hw_results
 
 
@@ -102,8 +101,7 @@ def sum_test1_results(id):
     for dict in test1_results:
         if dict["id"] == id:
             for i,j in enumerate(dict["task_completion"]):
-                if j == 1:
-                    sum_test1_results += test1_weights[i+1]
+                sum_test1_results += j*test1_weights[i+1]
             return sum_test1_results
 
 def update_students_results(group):
