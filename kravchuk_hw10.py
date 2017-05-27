@@ -87,8 +87,29 @@ test1_weights = {
     12 : 15
 }
 
+def sum_hw_results(id):
+    sum_hw_results = 0
+    for dict in hw_results:
+        if dict["id"] == id:
+            for j in dict["task_completion"]:
+                if j == 1:
+                    sum_hw_results += 1
+            return sum_hw_results
+
+
+def sum_test1_results(id):
+    sum_test1_results = 0
+    for dict in test1_results:
+        if dict["id"] == id:
+            for i,j in enumerate(dict["task_completion"]):
+                if j == 1:
+                    sum_test1_results += test1_weights[i+1]
+            return sum_test1_results
 
 def update_students_results(group):
+    for i, dict in enumerate(group):
+        dict["rank"] = sum_hw_results(dict["id"]) + sum_test1_results(dict["id"])
+
     '''
     Calculate student results and put them into the student dictionary under the key "rank".
     Total rank is calculated as a sum of completed hw tasks +
@@ -98,8 +119,36 @@ def update_students_results(group):
     '''
     pass
 
+def get_fullname(dict):
+    return dict.get("fullname")
+
+def get_rank(dict):
+    return dict.get("rank")
+
+
+def print_card(dict):
+    a = dict["github"]
+    b = a.split("/")
+    print(('-----------------------------------------\n'
+           ': ID:               %20s:\n'
+           ':.......................................:\n'
+           ': Full name:        %20s:\n'
+           ': Email:            %20s:\n'
+           ': Github:           %20s:\n'
+           ': Rank:             %20s:\n'
+           '-----------------------------------------'
+
+           ) % (dict["id"], dict["fullname"], dict["email"], b[3], dict["rank"]))
+
 
 def print_students_info(group, sort_by_key="fullname"):
+    if sort_by_key == "fullname":
+        for dict in sorted(group, key=get_fullname):
+            print_card(dict)
+    elif sort_by_key == "rank":
+        for dict in sorted(group, key=get_rank):
+            print_card(dict)
+
     '''
     Prints students info sorted according to the passed key in dictionary). By default, sort by students names.
     Student info should be presented as a card that includes the following information:
@@ -119,8 +168,10 @@ def print_students_info(group, sort_by_key="fullname"):
         -----------------------------------------
     :return: None
     '''
-    pass
+
 
 if __name__ == "__main__":
     update_students_results(group)
 print_students_info(group, "rank")
+
+
