@@ -20,11 +20,13 @@ class Godzilla:
         self.last_volume = volume_of_stomach
 
     def eat_humans(self,eat_human):
-        if self.last_volume - eat_human == Godzilla.PERSENT*self.volume_of_stomach:
-            print("Godzilla is full and can no longer eat people")
-
+        self.last_volume -= eat_human
+    def is_hungry(self,eat_human):
+        if self.last_volume - eat_human != Godzilla.PERSENT*dinner.volume_of_stomach:
+            return True
         else:
-            self.last_volume -= eat_human
+            return False
+
 
 
 
@@ -35,9 +37,10 @@ while dinner.last_volume > Godzilla.PERSENT*dinner.volume_of_stomach:
     dinner.eaten_human_volume = random.randint(1,120)
     if dinner.last_volume - dinner.eaten_human_volume < Godzilla.PERSENT*dinner.volume_of_stomach:
         continue
-    elif dinner.last_volume - dinner.eaten_human_volume == Godzilla.PERSENT*dinner.volume_of_stomach:
+    elif not dinner.is_hungry(dinner.eaten_human_volume):
         print("Last human:", dinner.eaten_human_volume, "nym nym nym nym nym")
         dinner.eat_humans(dinner.eaten_human_volume)
+        print("Godzilla is full and can no longer eat people")
         break
     else:
         dinner.eat_humans(dinner.eaten_human_volume)
