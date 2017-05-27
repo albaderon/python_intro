@@ -11,32 +11,34 @@ pretty.pretty_task(34)
 
 class Godzilla:
 
-    def __invert__(self,volume_of_stomach = 0):
-        self.volume_of_stomach = volume_of_stomach
+    volume_of_stomach = 1000
+
+    def __init__(self,eaten_human_volume=0):
+        self.eaten_human_volume = eaten_human_volume
+        self.last_volume = Godzilla.volume_of_stomach
+
+    def eat_humans(self):
+        if self.last_volume - self.eaten_human_volume == 0.1*Godzilla.volume_of_stomach:
+            print("Godzilla is full and can no longer eat people")
+
+        else:
+            self.last_volume -= self.eaten_human_volume
 
 
-    def god_zilla(self):
-
-        last_volume_of_stomach = self.volume_of_stomach
-
-        while last_volume_of_stomach:
-            human = random.randint(1, 120)
-
-            if last_volume_of_stomach - human < 0.1*self.volume_of_stomach:
-                continue
 
 
-            elif last_volume_of_stomach - human == 0.1*self.volume_of_stomach:
-                last_volume_of_stomach -= human
-                print("Last human:", human, "Volume:", last_volume_of_stomach, "'nym nym nym'", end="\n")
-                print("Godzilla is full and can no longer eat people")
-                break
+dinner = Godzilla()
 
-            else:
-                last_volume_of_stomach -= human
-                print("Human:", human, "Volume:", last_volume_of_stomach, "'nym nym nym'", end="\n")
+while dinner.last_volume > 100:
+    dinner.eaten_human_volume = random.randint(1,120)
+    if dinner.last_volume - dinner.eaten_human_volume < 100:
+        continue
+    elif dinner.last_volume - dinner.eaten_human_volume == 100:
+        print("Last human:", dinner.eaten_human_volume, "nym nym nym nym nym")
+        dinner.eat_humans()
+        break
+    else:
+        dinner.eat_humans()
+        print("Human:",dinner.eaten_human_volume,"nym nym nym","Last volume:", dinner.last_volume)
 
-a = Godzilla()
-a.volume_of_stomach = 1000
 
-a.god_zilla()
