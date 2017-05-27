@@ -29,11 +29,11 @@ class Godzilla:
 
 dinner = Godzilla()
 
-while dinner.last_volume > 100:
+while dinner.last_volume > 0.1*Godzilla.volume_of_stomach:
     dinner.eaten_human_volume = random.randint(1,120)
-    if dinner.last_volume - dinner.eaten_human_volume < 100:
+    if dinner.last_volume - dinner.eaten_human_volume < 0.1*Godzilla.volume_of_stomach:
         continue
-    elif dinner.last_volume - dinner.eaten_human_volume == 100:
+    elif dinner.last_volume - dinner.eaten_human_volume == 0.1*Godzilla.volume_of_stomach:
         print("Last human:", dinner.eaten_human_volume, "nym nym nym nym nym")
         dinner.eat_humans()
         break
