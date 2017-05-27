@@ -16,7 +16,7 @@ class Circle:
         self.r = r
 
 
-    def is_point_in_circle(self):
+    def is_point_in_circle(self,point):
 
         if ((point.x-self.x)**2 + (point.y-self.y)**2) <= self.r**2:
             return True
@@ -36,5 +36,5 @@ class Point:
 circle = Circle(5,5,5)
 point = Point(3,2)
 
-print(circle.is_point_in_circle())
+print(circle.is_point_in_circle(point))
 
